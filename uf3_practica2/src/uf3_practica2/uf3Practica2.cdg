@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="uf3Practica2">
+  <ClassDiagramComponents>
+    <Class name="Libre" package="" visibility="public" xPosition="584.0" yPosition="87.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="tipus" type="String" visibility="private"/>
+        <Field name="editorial" type="String" visibility="private"/>
+        <Field name="any" type="int" visibility="private"/>
+        <Field name="autor" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Autor" package="" visibility="public" xPosition="96.0" yPosition="106.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nacionalitat" type="String" visibility="private"/>
+        <Field name="dataDeNaixement" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Biblioteca" package="" visibility="public" xPosition="1202.0" yPosition="144.0">
+      <Fields>
+        <Field name="quantitatLlibres" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Copia" package="" visibility="public" xPosition="904.0" yPosition="144.0">
+      <Fields>
+        <Field name="identificador" type="int" visibility="private"/>
+        <Field name="estat" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Lector" package="" visibility="public" xPosition="1202.0" yPosition="566.0">
+      <Fields>
+        <Field name="llibresPrestats" type="int" visibility="private"/>
+        <Field name="nom" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Copia" target="Libre"/>
+    <HasRelation name="te" source="Biblioteca" target="Lector" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="1" source="Libre" target="Autor" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="te" source="Biblioteca" target="Copia" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
